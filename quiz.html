@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quiz App</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="home custom-box hide">
+            <h2>Welcome to quiz!!!</h2>
+            <p>Total questions: <span class="total-questions">5</span></p>
+            <button type="button" class="btn">Start</button>
+        </div>
+
+        <div class="quiz-box custom-box hide">
+            <div class="question-number"> Question 1 out of 5</div>
+            <div class="question-text">What comes after number 10</div>
+            <div class="option-container">
+                <div class="option">100</div>
+                <div class="option">hello</div>
+                <div class="option">200</div>
+                <div class="option">11</div>
+            </div>
+            <div class="next-button">
+                <button type="button" class="btn">Next</button>
+            </div>
+            <div class="answer-indicator">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <!-- <div clas=""></div> -->
+        </div>
+        <div class="result-box custom-box">
+            <h2> Score</h2>
+            <table>
+                <tr>
+                    <td>Total Question</td>
+                    <td><span class="total-question">5</span></td>
+                </tr>
+                <tr>
+                    <td>Total Attempts</td>
+                    <td><span class="total-attempts">2</span></td>
+                </tr>
+                <tr>
+                    <td>Correct</td>
+                    <td><span class="correct"></span>1</td>
+                </tr>
+                <tr>
+                    <td>Wrong</td>
+                    <td><span class="wrong"></span>1</td>
+                </tr>
+                <tr>
+                    <td>Score</td>
+                    <td><span class="score"></span>10</td>
+                </tr>
+            </table>
+            <button type="button" class="btn">Go home</button>
+        </div>
+    </body>
+</html>
