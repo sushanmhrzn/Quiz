@@ -5,7 +5,23 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <div class="home custom-box">
+        <div class="login custom-box">
+            Username:<input type="text" id="username">
+            Password:<input type="text" id="password"><br><br><br>
+            <button type="button" class="btn" onclick="login()">Login</button>
+            <button type="button" class="btn" onclick="signupPage()">signup</button>
+        </div>
+    <body>
+        <div class="signup custom-box hide">
+            Email:        <input type="text" id="username"><br>
+            username:<input type="text" id="username"><br>
+            Password:<input type="text" id="password"><br>
+            Phone:        <input type="text" id="phoneNumber">
+            <br><br><br>
+            <button type="button" class="btn" onclick="loginPage()">Login</button>
+            <button type="button" class="btn" onclick="signup()">signup</button>
+        </div>
+        <div class="home custom-box hide">
             <h2>Welcome to quiz!!!</h2>
             <p>Total questions: <span class="total-questions"><input type="text" id="num" min="1"></span></p>
             <button type="button" class="btn" onclick="play()">Start</button>

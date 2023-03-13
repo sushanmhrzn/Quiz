@@ -5,6 +5,8 @@ const optionsContainer=document.querySelector(".option-container");
 let homeBox=document.querySelector(".home");
 let quizBox=document.querySelector(".quiz-box");
 let resultBox=document.querySelector(".result-box");
+let singupBox=document.querySelector(".signup");
+let loginBox=document.querySelector(".login");
 const totalattempt=document.querySelector(".total-attempts");
 const totalquestions=document.querySelector(".total-question");
 const answerIndicator=document.querySelector(".answer-indicator");
@@ -150,6 +152,27 @@ function getNewQuestion(){
     // }
 
     questionCounter++;
+}
+function login(){
+    username=document.getElementById("username").value;
+    password=document.getElementById("password").value;
+    if(!username || !password){
+        alert("Please fill both the fields");
+    }else{
+        console.log(username, password);
+
+        loginBox.classList.add("hide");
+        homeBox.classList.remove("hide");
+    }
+}
+
+function signupPage(){
+    loginBox.classList.add("hide")
+    singupBox.classList.remove("hide");    
+}
+function loginPage(){
+    singupBox.classList.add("hide")
+    loginBox.classList.remove("hide");    
 }
 
 function getResult(element){
