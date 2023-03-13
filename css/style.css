@@ -16,13 +16,14 @@ body{
     font-family: 'Sono', sans-serif;
     outline: none;
 }
-
+ 
 .custom-box::before,
 .custom-box::after{
     content: "";
     clear:both;
     display: table;
 }
+
 
 .custom-box{
     padding-top:100px;
@@ -75,6 +76,12 @@ body{
     width: 100%;
     float: left;
 }
+.home input{
+  padding: 12px 20px;
+  font-size: 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
 
 .quiz-box .question-number{
     font-size: 20px;
@@ -85,7 +92,7 @@ body{
     line-height: 4;
     }
 .quiz-box .question-text{
-    font-size :26px;
+    font-size :18px;
     font-weight: 600;
     padding: 10px;
     line-height:2;
@@ -98,10 +105,41 @@ body{
 }
 .quiz-box .option-container .option{
     background-color: #E8DBFC;
+    color:#000000;
     margin:10px;
     line-height: 2;
-    padding: 10px;
+    padding-left: 10px;
     border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.quiz-box .option-container .option.correct::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: green;
+    opacity: 50%;
+    
+}
+
+.quiz-box .option-container .option.incorrect::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    opacity: 50%;
+    background-color: red;
+}
+.quiz-box .option-container .option.answered{
+    pointer-events: none;
 }
 
 .quiz-box .next-button{
@@ -115,8 +153,8 @@ body{
     display: inline-block;
     background-color: black;
     border-radius: 50%;
-
 }
+
 .quiz-box .answer-indicator{
     margin-left: 10px;
 }

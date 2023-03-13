@@ -5,34 +5,35 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <div class="home custom-box hide">
+        <div class="home custom-box">
             <h2>Welcome to quiz!!!</h2>
-            <p>Total questions: <span class="total-questions">5</span></p>
-            <button type="button" class="btn">Start</button>
+            <p>Total questions: <span class="total-questions"><input type="text" id="num" min="1"></span></p>
+            <button type="button" class="btn" onclick="play()">Start</button>
         </div>
 
         <div class="quiz-box custom-box hide">
-            <div class="question-number"> Question 1 out of 5</div>
-            <div class="question-text">What comes after number 10</div>
+            <div id="countdown"></div>
+            <div class="question-number"> </div>
+            <div class="question-text"></div>
             <div class="option-container">
-                <div class="option">100</div>
-                <div class="option">hello</div>
-                <div class="option">200</div>
-                <div class="option">11</div>
+                <!-- <div class="option"></div>
+                <div class="option"></div>
+                <div class="option"></div>
+                <div class="option"></div> -->
             </div>
             <div class="next-button">
-                <button type="button" class="btn">Next</button>
+                <button type="button" class="btn"  onclick="next()">Next</button>
             </div>
             <div class="answer-indicator">
+                <!-- <div></div>
                 <div></div>
                 <div></div>
                 <div></div>
-                <div></div>
-                <div></div>
+                <div></div> -->
             </div>
             <!-- <div clas=""></div> -->
         </div>
-        <div class="result-box custom-box">
+        <div class="result-box custom-box hide">
             <h2> Score</h2>
             <table>
                 <tr>
@@ -41,22 +42,25 @@
                 </tr>
                 <tr>
                     <td>Total Attempts</td>
-                    <td><span class="total-attempts">2</span></td>
+                    <td><span class="total-attempts"></span></td>
                 </tr>
                 <tr>
                     <td>Correct</td>
-                    <td><span class="correct"></span>1</td>
+                    <td><span class="correct"></span></td>
                 </tr>
                 <tr>
                     <td>Wrong</td>
-                    <td><span class="wrong"></span>1</td>
+                    <td><span class="wrong"></span></td>
                 </tr>
                 <tr>
                     <td>Score</td>
-                    <td><span class="score"></span>10</td>
+                    <td><span class="score"></span></td>
                 </tr>
             </table>
-            <button type="button" class="btn">Go home</button>
+            <button type="button" class="btn" onclick="home()">Go home</button>
         </div>
+
+        <script type='text/javascript' src="./js/question.js"></script>
+        <script type='text/javascript' src="./js/app.js"></script>
     </body>
 </html>
