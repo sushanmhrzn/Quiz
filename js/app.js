@@ -27,6 +27,8 @@ let attempt=0;
 let randomQuestion=[];
 let questionLimit;
 let downloadTimer;
+let allData=JSON.parse(localStorage.getItem("allData")) || [];
+
 
 function play(){
     totalQues=parseInt(total.value);
@@ -62,11 +64,7 @@ function play(){
 let randomavailableQuestions=[]
 let questionIndex;
 
-function newHome(){
-    homeBox.classList.add("hide");
-    homeBox.classList.remove("hide");
-    reset();
-}
+
 function setQuestions() {
     let numberOfQuestion=totalQues;
     questionLimit=questions.length;
@@ -154,21 +152,52 @@ function getNewQuestion(){
     questionCounter++;
 }
 function login(){
-    username=document.getElementById("username").value;
-    password=document.getElementById("password").value;
-    if(!username || !password){
+    uname=document.getElementById("username").value;
+    pass=document.getElementById("password").value;
+    if(!uname || !pass){
         alert("Please fill both the fields");
     }else{
-        console.log(username, password);
-
-        loginBox.classList.add("hide");
-        homeBox.classList.remove("hide");
+        let data=[];
+        data=JSON.parse(localStorage.getItem("allData"));
+        let check=data.some(e=>e.username.toLowerCase()==uname.toLowerCase() && e.password.toLowerCase()==pass.toLowerCase());
+        if(check){
+            loginBox.classList.add("hide");
+            homeBox.classList.remove("hide");
+        }else{
+            alert("user name and password not valid");
+        }
+    }
+}
+// let data={}
+function signup(){
+    let email=document.getElementById("email").value;
+    let username=document.getElementById("susername").value;
+    let password=document.getElementById("spassword").value;
+    let phone=document.getElementById("phoneNumber").value;
+    // console.log(email,username,password,phone);
+    document.getElementById("email").value="";
+    document.getElementById("susername").value="";
+    document.getElementById("spassword").value="";
+    document.getElementById("phoneNumber").value="";
+    if(!username || !password || !email || !phone){
+        alert("Please fill all the fields");
+    }else{
+        // console.log(username, password);
+        currentData={email,username,password,phone};
+        console.log(data);
+        allData.push(currentData);
+        localStorage.setItem("allData",JSON.stringify(allData));
+        localStorage.setItem("currentData",JSON.stringify(currentData));
+        document.getElementById("email").value="";
+        document.getElementById("susername").value="";
+        document.getElementById("spassword").value="";
+        document.getElementById("phoneNumber").value="";
     }
 }
 
 function signupPage(){
     loginBox.classList.add("hide")
-    singupBox.classList.remove("hide");    
+    singupBox.classList.remove("hide");
 }
 function loginPage(){
     singupBox.classList.add("hide")

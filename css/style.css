@@ -16,7 +16,11 @@ body{
     font-family: 'Sono', sans-serif;
     outline: none;
 }
- 
+.signup p:hover, 
+.login p:hover{
+    color:red;
+    cursor: pointer;
+}
 .custom-box::before,
 .custom-box::after{
     content: "";
